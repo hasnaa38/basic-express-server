@@ -10,7 +10,7 @@ This is a basic Express.js server that responds a JSON object with the name valu
 * /person route working Heroku link: https://hasnaa-basic-express-server.herokuapp.com/person?name=hasnaa
 * 404 error link: https://hasnaa-basic-express-server.herokuapp.com/pirson?name=hasnaa
 * 500 error links: https://hasnaa-basic-express-server.herokuapp.com/person?name=, https://hasnaa-basic-express-server.herokuapp.com/person?name=1hasnaa
-* Pull request from dev to main: https://github.com/hasnaa38/basic-express-server/pull/1
+* Pull requests from dev to main: https://github.com/hasnaa38/basic-express-server/pull/1, https://github.com/hasnaa38/basic-express-server/pull/2
 
 ## UML
 
