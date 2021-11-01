@@ -14,7 +14,7 @@ function queryValidator(req, res, next){
     if(name && /^[a-z]/i.test(name)) {
         next();
     } else {
-        next('500/Server-Error - invalid request, check the name query');
+        next('500 error');
     }
 }
 

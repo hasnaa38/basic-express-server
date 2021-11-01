@@ -2,7 +2,7 @@
 
 // Sends 500/Server-Error message as the response
 
-module.exports = (req, res) => {
+module.exports = (error, req, res, next) => {
     res.status(500).send({
         error: 500,
         route: req.path,
@@ -11,7 +11,7 @@ module.exports = (req, res) => {
     })
 }
 
-/* 
+/*
 if the error message wasn't defined we can use this syntax:
 const errorMessage = error.message ? error.message : error;
 */
