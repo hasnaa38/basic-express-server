@@ -1,6 +1,17 @@
 'use strict';
 
-/*
-- sends a 404/Not-Found message as the response
-- Import this into your server and set it up to be “used” after your other routes
-*/ 
+// Sends 500/Server-Error message as the response
+
+module.exports = (req, res) => {
+    res.status(500).send({
+        error: 500,
+        route: req.path,
+        query: req.query,
+        message: '500/Server-Error'
+    })
+}
+
+/* 
+if the error message wasn't defined we can use this syntax:
+const errorMessage = error.message ? error.message : error;
+*/

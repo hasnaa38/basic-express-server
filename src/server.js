@@ -3,6 +3,18 @@
 const express = require('express');
 const app = express();
 
+// requiring error handlers
+const errorHandler_404 = require('./handlers/404');
+const errorHandler_500 = require('./handlers/500');
+
+// requiring the middleware
+const logger = require('./middleware/logger');
+const queryValidator = require('./middleware/validator');
+
+// the global middleware
+app.use(logger);
+app.use(queryValidator);
+
 // Initializing the server port
 function start(PORT) {
     app.listen(PORT, () => {
@@ -22,9 +34,14 @@ If valid, send a JSON object through the response with the name value in it
 i.e. {name: "fred" }
 */
 
-app.get('/person', (req, res) => {
+app.get('/person', queryValidator,(req, res) => {
     let name = req.query.name;
-    res.status(200).send(`hello ${name}`);
-})
+    res.status(200).json({name: `${name}`});
+});
+
+// 404 invalid route/method error:
+app.use('*', errorHandler_404);
+// 500 errors
+app.use(errorHandler_500);
 
 module.exports = { app, start }

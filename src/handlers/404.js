@@ -1,6 +1,10 @@
 'use strict';
 
-/*
-- Sends a 500/Server Error message as the response
-- Import this into your server and set it up to be “used” as the last route
-*/
+// Sends 404/Not-Found message as the response on a bad route or a bad method
+
+module.exports = (req, res,) => {
+    res.status(404).send({
+        error: 404,
+        message: '404/Not-Found'
+    })
+}
