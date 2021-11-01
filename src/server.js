@@ -25,6 +25,7 @@ function start(PORT) {
 // Proof of life
 app.get('/', (req, res) => {
     res.status(200).send('Hello :) Server Running Successfully');
+    // app.use(errorHandler_500);
 })
 
 /*
@@ -36,7 +37,11 @@ i.e. {name: "fred" }
 
 app.get('/person', queryValidator,(req, res) => {
     let name = req.query.name;
-    res.status(200).json({name: `${name}`});
+    try{
+        res.status(200).json({name: `${name}`});
+    } catch(error) {
+        app.use(errorHandler_500);
+    }
 });
 
 // 404 invalid route/method error:

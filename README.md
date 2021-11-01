@@ -7,5 +7,11 @@ This is a basic Express.js server that responds a JSON object with the name valu
 ## Links
 
 * Heroku deployment: https://hasnaa-basic-express-server.herokuapp.com/
-* /person route Heroku link: https://hasnaa-basic-express-server.herokuapp.com/person?name=hasnaa
-* Pull request from dev to main: 
+* /person route working Heroku link: https://hasnaa-basic-express-server.herokuapp.com/person?name=hasnaa
+* 404 error link: https://hasnaa-basic-express-server.herokuapp.com/pirson?name=hasnaa
+* 500 error links: https://hasnaa-basic-express-server.herokuapp.com/person?name=, https://hasnaa-basic-express-server.herokuapp.com/person?name=1hasnaa
+* Pull request from dev to main: https://github.com/hasnaa38/basic-express-server/pull/1
+
+## UML
+
+![uml_lab02](./uml_lab02.png)
